@@ -2,7 +2,6 @@
   require_once ('validador_acesso.php');
 ?>
 <html>
-
 <head>
 	<meta charset="utf-8" />
 	<title>App Help Desk</title>
@@ -10,7 +9,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	 crossorigin="anonymous">
-
 	<style>
 		.card-home {
 			padding: 30px 0 0 0;
@@ -19,9 +17,7 @@
 		}
 	</style>
 </head>
-
 <body>
-
 	<nav class="navbar navbar-dark bg-dark">
 		<a class="navbar-brand" href="home.php">
 			<img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> App Help Desk
@@ -64,7 +60,6 @@
 								<div class="col-6 d-flex justify-content-center">
 									<a href="Add_usuario.php">
 										<i class="fas fa-user-plus fa-5x"></i>
-										
 									</a>
 								</div>
 								<div class="col-6 d-flex justify-content-center">
@@ -78,8 +73,6 @@
 				</div>
 			</div>
 		</div>
-
 		<script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>

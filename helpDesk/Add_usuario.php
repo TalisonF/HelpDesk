@@ -32,10 +32,8 @@
       </li>
     </ul>
   </nav>
-
   <div class="container">
     <div class="row">
-
       <div class="card-abrir-chamado">
         <div class="card">
           <div class="card-header">
@@ -53,7 +51,6 @@
                     <label>Senha</label>
                     <input name="senha" type="text" class="form-control" placeholder="Senha">
                   </div>
-
                   <div class="form-group">
                     <label>Tipo Usuario</label>
                     <select name="tipo" class="form-control">
@@ -62,18 +59,15 @@
                       <option value="2">Usuario</option>
                     </select>
                   </div>
-
                   <div class="row mt-5">
                     <div class="col-6">
                       <a class="btn btn-lg btn-warning btn-block" href="home.php">Voltar</a>
                     </div>
-
                     <div class="col-6">
                       <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
                     </div>
                   </div>
                 </form>
-
               </div>
             </div>
           </div>
