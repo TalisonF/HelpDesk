@@ -1,6 +1,8 @@
 <?php 
   require_once('validador_acesso.php');
-
+  if($_SESSION['perfil_id'] != '1'){
+    header ("location: home.php?notadm=1");
+  }
   $usuarios = array();
   $conn = mysqli_connect('127.0.0.1', 'root', '', 'crud');
   $sql = "select * from usuarios;";

@@ -1,6 +1,9 @@
 <?php 
   require_once ('validador_acesso.php');
-  ?>
+  if($_SESSION['perfil_id'] != '1'){
+    header ("location: home.php?notadm=1");
+  }
+?>
 <html>
 <head>
   <meta charset="utf-8"/>
@@ -16,9 +19,7 @@
     }
   </style>
 </head>
-
 <body>
-
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="home.php">
       <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> Help Desk

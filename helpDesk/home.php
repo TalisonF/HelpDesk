@@ -34,12 +34,15 @@
 			</li>
 		</ul>
 	</nav>
-
 	<div class="container">
 		<div class="row">
-
 			<div class="card-home">
-				<div class="card">
+					<?php if(isset($_GET['notadm'])){?>
+						<h1 class="text-danger">
+							Acesso não permitido para usuarios comuns!
+						</h1>
+					<?php }?>
+					<div class="card">
 					<div class="card-header">
 						Menu
 					</div>
