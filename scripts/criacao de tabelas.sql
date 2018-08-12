@@ -18,4 +18,4 @@ create table chamados (
     foreign key (id_usuario) references usuarios(id_usuario) 
 );
 
-insert to usuarios (email,senha,privilegios) values ('adm@helpdesk.com','1234','1');
+insert into usuarios (email,senha,privilegios) values ('adm@helpdesk.com','1234','1');
