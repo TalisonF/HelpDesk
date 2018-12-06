@@ -11,6 +11,7 @@
         width: 350px;
         margin: 0 auto;
       }
+
     </style>
   </head>
   <body>
@@ -30,7 +31,7 @@
             <div class="card-body">
               <form method="post" action="../scripts/autentica_Usuario.php">
                 <div class="form-group" >
-                  <input name="email" type="email" class="form-control" placeholder="E-mail">
+                  <input name="email" type="text" class="form-control" placeholder="Usuario">
                 </div>
                 <div class="form-group">
                   <input name="senha" type="password" class="form-control" placeholder="Senha">

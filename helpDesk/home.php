@@ -15,20 +15,37 @@
 			width: 100%;
 			margin: 0 auto;
 		}
-	</style>
+		.menu {
+			display: inline;
+			margin-top: 10px;
+			maru
+		}
+		.menu>li{
+			color: white;			
+		}
+		.menu>li>a{
+			color: rgb(23,162,184);
+		}		
+		.menu>li>a:hover{
+			color: rgb(0,86,179);
+			text-decoration: none;
+		}
+		</style>
 </head>
 <body>
+
+	<!--<a class="nav-link" href="logoff.php">
+					Sair					
+		</a>
+	-->
 	<nav class="navbar navbar-dark bg-dark">
 		<a class="navbar-brand" href="home.php">
-			<img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> App Help Desk
+			<img src="logo.png"  height="30" class="d-inline-block align-top" alt=""> App Help Desk
 		</a>
-		<ul class="navbar-nav">
-			<li class="nav-item">
-				<a class="nav-link" href="logoff.php">
-					SAIR
-				</a>
-			</li>
-		</ul>
+		<ol class="nav-item menu">
+			<li class="menu nav-item"> <?php echo($_SESSION['nome'])?></li>
+			<li class="menu nav-item"> <a href="logoff.php">Logoff</a></li>
+		</ol>
 	</nav>
 	<div class="container">
 		<div class="row">

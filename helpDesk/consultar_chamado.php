@@ -2,7 +2,7 @@
   require_once ('validador_acesso.php');
   $chamados = array();
   $conn = mysqli_connect('127.0.0.1', 'root', '', 'crud');
-  $sql = "select * from chamados;";
+  $sql = "select usuarios.nome, chamados.titulo, chamados.categoria, chamados.id_chamado, chamados.descricao from chamados, usuarios where chamados.id_usuario =  usuarios.id_usuario;";
   $consuta = mysqli_query($conn, $sql);
   mysqli_close($conn);
   while ($linha = $consuta->fetch_assoc()) {
@@ -64,13 +64,19 @@
                     <h5 class="card-title">
                       <?php echo $chamado['titulo']; ?>
                     </h5>
+
+                    
                     <h6 class="card-subtitle mb-2 text-muted">
                       <?php echo $chamado['categoria']; ?>
                     </h6>
                     <p class="card-text">
                       <?php echo $chamado['descricao']; ?>
                     </p>
+                    
                   </div>
+                  <h6 class="card-subtitle mb-2 ">
+                      <?php echo ' <br> Chamado aberto por: '.$chamado['nome']; ?>
+                    </h6>
                 </div>
               </div>
               <?php }?>

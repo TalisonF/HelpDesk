@@ -44,6 +44,10 @@
               <div class="col">
                 <form method="post" action="../scripts/add_user.php">
                   <div class="form-group">
+                      <label>Nome</label>
+                      <input name="nome" type="text" class="form-control" placeholder="Nome">
+                    </div>  
+                  <div class="form-group">
                     <label>E-mail</label>
                     <input name="email" type="email" class="form-control" placeholder="E-mail">
                   </div>

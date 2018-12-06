@@ -27,6 +27,7 @@
             $usuario_id = $user['id_usuario'];
             $usuario_perfil_id = $user['privilegios'];
             $usuario_nome = $user['email'];
+            $nome = $user['nome'];
         }
     }
 
@@ -35,8 +36,9 @@
         $_SESSION['id'] = $usuario_id;
         $_SESSION['perfil_id'] = $usuario_perfil_id;
         $_SESSION['email'] = $usuario_nome;
+        $_SESSION['nome'] = $nome;
 
-        header('Location: ../helpDesk/home.php');
+        header('Location: ../helpDesk/home.php?usuario='.$usuario_nome);
     }else{
         echo 'não deu';
         $_SESSION['autenticado'] = 'NAO';

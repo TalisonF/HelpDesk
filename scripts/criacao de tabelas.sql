@@ -5,7 +5,7 @@ create table usuarios (
     email varchar(50),
     senha varchar(50),
     privilegios varchar(1),
-    primary key(id_usuario), 
+    primary key(id_usuario)
 );
 create table chamados ( 
     id_chamado int auto_increment,
@@ -18,4 +18,4 @@ create table chamados (
     foreign key (id_usuario) references usuarios(id_usuario) 
 );
 
-insert into usuarios (email,senha,privilegios) values ('adm@helpdesk.com','1234','1');
+insert into usuarios (email,senha,privilegios) values ('talison@helpdesk.com','1234','1');

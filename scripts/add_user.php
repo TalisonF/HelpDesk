@@ -5,8 +5,8 @@
     $email = $_POST['email'];
     $senha = $_POST['senha'];
     $privilegio = $_POST['tipo'];
-    
-    $sql = "insert into usuarios (email , senha , privilegios) values ('$email' , '$senha' , '$privilegio' );";
+    $nome = $_POST['nome'];
+    $sql = "insert into usuarios (email , senha , privilegios, nome) values ('$email' , '$senha' , '$privilegio' , '$nome');";
     
     echo $sql;
     if(mysqli_query($connc , $sql)){
