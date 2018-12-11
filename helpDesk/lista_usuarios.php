@@ -45,6 +45,7 @@
       <table class="table">
         <thead>
           <th>ID</th>
+          <th>Nome</th>
           <th>Email</th>
           <th>Privilegios</th>
           <th> Alterar </th>
@@ -54,6 +55,7 @@
           <tr>
             <form method="POST" action="../scripts/alterar_privilegios.php?id_usuario=<?php echo $user['id_usuario']; ?>">
               <td><?php echo $user['id_usuario']; ?></td>
+              <td><?php echo $user['nome']; ?></td>
               <td><?php echo $user['email']; ?></td>
               <td>
                 <select name="Privilegios">

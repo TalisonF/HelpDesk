@@ -53,7 +53,7 @@
                   </div>
                   <div class="form-group">
                     <label>Senha</label>
-                    <input name="senha" type="text" class="form-control" placeholder="Senha">
+                    <input name="senha" type="password" class="form-control" placeholder="Senha">
                   </div>
                   <div class="form-group">
                     <label>Tipo Usuario</label>
