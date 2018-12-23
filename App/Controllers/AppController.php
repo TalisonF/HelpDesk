@@ -40,7 +40,6 @@ class AppController extends Action{
         $chamado = Container::getModel('chamado');
 
         $this->view->chamados = $chamado->getAll();
-        
         $this->render('consultar_chamado','layout2');
     }
 
@@ -51,6 +50,8 @@ class AppController extends Action{
         $chamado->__set('id_chamado', $_GET['id_chamado']);
 
         $chamado->excluirChamado();
+        header("Location: /consultar_chamado?chamado_excluido=true");
+
 
     }
 

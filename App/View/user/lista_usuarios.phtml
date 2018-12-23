@@ -1,0 +1,45 @@
+    <div class="row">
+      <h1 class="p-3 text-primary">
+        Lista de Usuarios
+      </h1>
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Privilegios</th>
+          <th> Alterar </th>
+        </thead>
+        <tbody>
+          <?php foreach ($this->view->usuarios as $user){?>
+          <tr>
+            <form method="POST" action="/alterarPrivilegios?id_usuario=<?php echo $user['id_usuario']; ?>">
+              <td><?php echo $user['id_usuario']; ?></td>
+              <td><?php echo $user['nome']; ?></td>
+              <td><?php echo $user['email']; ?></td>
+              <td>
+                <select name="Privilegios">
+                  <option  value="1"> Adiministrador </option>
+                  <option <?php if($user['privilegios'] == 2) {echo "selected ";} ?>value="2"> Usuario </option>
+                </select>
+              </td>
+              <td>
+                <input type="submit" value="Alterar" class="btn btn-success">
+              </form>
+                <a href="/excluir_usuario?id_usuario=<?php echo $user['id_usuario'];?>"><button class="btn btn-danger">X</button></a>
+              </td>
+              </tr>
+            </form>
+          <?php }?>
+        </tbody>
+      </table>
+
+    </div>
+      <div class="row mt-5">
+          <div class="col-6">
+            <a class="btn btn-lg btn-warning btn-block" href="/home">Voltar</a>
+          </div>
+        </div>
+      
+
+    <script src="js/bootstrap.min.js"></script>

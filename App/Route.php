@@ -47,7 +47,32 @@
             'controller' => 'AppController',
             'action' => 'excluir_chamado'
           );
-          
+          $routes['add_usuario'] = array(
+            'route' => '/Add_usuario',
+            'controller' => 'UserController',
+            'action' => 'add_usuario'
+          );
+          $routes['cadastrar_user'] = array(
+            'route' => '/cadastrar_user',
+            'controller' => 'UserController',
+            'action' => 'cadastrar_user'
+          );
+          $routes['lista_usuarios'] = array(
+            'route' => '/lista_usuarios',
+            'controller' => 'UserController',
+            'action' => 'lista_usuarios'
+          );
+          $routes['alterarPrivilegios'] = array(
+            'route' => '/alterarPrivilegios',
+            'controller' => 'UserController',
+            'action' => 'alterarPrivilegios'
+          );
+          $routes['excluir_usuario'] = array(
+            'route' => '/excluir_usuario',
+            'controller' => 'UserController',
+            'action' => 'excluir_usuario'
+          );
+
           
           
 

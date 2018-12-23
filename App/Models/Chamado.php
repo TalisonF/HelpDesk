@@ -37,7 +37,7 @@ class Chamado extends Model{
     public function getAll(){
         $query = "
         select 
-            chamados.id_chamado ,chamados.titulo,chamados.categoria, chamados.descricao , usuarios.nome 
+            chamados.id_chamado ,chamados.titulo,chamados.categoria, chamados.descricao , usuarios.nome , usuarios.id_usuario
         from 
             chamados, usuarios 
         where 
