@@ -1,0 +1,26 @@
+
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>App Help Desk</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	 crossorigin="anonymous">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/home">
+			<img src="imagens/logo.png"  height="30" class="d-inline-block align-top" alt=""> App Help Desk
+		</a>
+		<ol class="nav-item menu">
+			<li class="menu nav-item"> <?=$_SESSION['nome']?></li>
+			<li class="menu nav-item"> <a href="/sair">Logoff</a></li>
+		</ol>
+	</nav>
+    <div class="container">
+      <?= $this->content() ?>
+    </div>
+  </body>
+</html>

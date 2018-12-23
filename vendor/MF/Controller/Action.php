@@ -6,8 +6,9 @@ abstract class Action {
 
 	protected $view;
 
-	public function __consctruct() {
-		$this->view = new stdClass();
+	public function __construct()
+	{
+		$this->view = new \stdClass();
 	}
 
 	protected function render($view, $layout) {

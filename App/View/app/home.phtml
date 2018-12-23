@@ -1,0 +1,42 @@
+		<div class="row">
+			<div class="card-home">
+					<?php if(isset($_GET['notadm'])){?>
+						<h1 class="text-danger">
+							Acesso não permitido para usuarios comuns!
+						</h1>
+					<?php }?>
+					<div class="card">
+					<div class="card-header">
+						Menu
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="col-6 d-flex justify-content-center">
+								<a href="/abrir_chamado">
+									<i class="fas fa-edit fa-5x"></i>
+								</a>
+							</div>
+							<div class="col-6 d-flex justify-content-center">
+								<a href="consultar_chamado.php">
+									<i class="fas fa-search fa-5x"></i>
+								</a>
+							</div>
+					</div>
+				<?php if($_SESSION['privilegios'] == 1){ ?>
+						<div class="row mt-3">
+							<div class="col-6 d-flex justify-content-center">
+								<a href="Add_usuario.php">
+									<i class="fas fa-user-plus fa-5x"></i>
+								</a>
+							</div>
+							<div class="col-6 d-flex justify-content-center">
+							<a href="lista_usuarios.php">
+								<i  class="fas fa-users fa-5x"></i>
+							</a>
+						</div>
+					</div>
+				<?php }?>
+			</div>
+		</div>
+	</div>
+<script src="js/bootstrap.min.js"></script>
