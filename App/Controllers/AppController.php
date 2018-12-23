@@ -19,6 +19,7 @@ class AppController extends Action{
         $this->validaAutenticacao();
         $this->render('abrir_chamado','layout2');
     }
+
     public function registra_chamado(){
         $this->validaAutenticacao();
         $chamado = Container::getModel('chamado');
@@ -31,6 +32,25 @@ class AppController extends Action{
         $chamado->salvar();
 
         header("Location: /abrir_chamado?chamado_aberto=true");
+
+    }
+
+    public function consultar_chamado(){
+        $this->validaAutenticacao();
+        $chamado = Container::getModel('chamado');
+
+        $this->view->chamados = $chamado->getAll();
+        
+        $this->render('consultar_chamado','layout2');
+    }
+
+    public function excluir_chamado(){
+        $this->validaAutenticacao();
+        
+        $chamado = Container::getModel('chamado');
+        $chamado->__set('id_chamado', $_GET['id_chamado']);
+
+        $chamado->excluirChamado();
 
     }
 

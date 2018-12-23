@@ -30,13 +30,31 @@ class Chamado extends Model{
         $stmt->bindValue(':categoria', $this->__get('categoria'));
         $stmt->bindValue(':descricao', $this->__get('descricao'));
         $stmt->bindValue(':status_chamado', 'aberto');
-
         $stmt->execute();
-        
         return $this;
-    
     }
 
+    public function getAll(){
+        $query = "
+        select 
+            chamados.id_chamado ,chamados.titulo,chamados.categoria, chamados.descricao , usuarios.nome 
+        from 
+            chamados, usuarios 
+        where 
+            chamados.id_usuario = usuarios.id_usuario
+        ";
+
+            $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function excluirChamado(){
+        $query = "delete from chamados where id_chamado = :id_chamado";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id_chamado', $this->__get('id_chamado'));
+        $stmt->execute();
+    }
     
 }
 

@@ -37,6 +37,16 @@
             'controller' => 'AppController',
             'action' => 'registra_chamado'
           );
+          $routes['consultar_chamado'] = array(
+            'route' => '/consultar_chamado',
+            'controller' => 'AppController',
+            'action' => 'consultar_chamado'
+          );
+          $routes['excluir_chamado'] = array(
+            'route' => '/excluir_chamado',
+            'controller' => 'AppController',
+            'action' => 'excluir_chamado'
+          );
           
           
           

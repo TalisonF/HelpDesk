@@ -1,0 +1,51 @@
+<div class="row">
+        <div class="card-consultar-chamado">
+          <div class="card">
+            <div class="card-header">
+              Consulta de chamado
+            </div>
+            <div class="card-body">
+              <?php foreach ($this->view->chamados as $chamado){
+                  if($_SESSION['privilegios'] == '2'){
+                    if($_SESSION['id'] != $chamado['id_usuario']){
+                      continue;
+                    }
+                  }
+                ?>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="col-2 float-right">
+                    <br>
+                    <a href="/excluir_chamado?id_chamado=<?php echo $chamado['id_chamado']; ?>">
+                    <button class="btn btn-danger">X</button> </a>
+                  </div>
+                  <div class="col-8 float-letf">
+                    <h5 class="card-title">
+                      <?php echo $chamado['titulo']; ?>
+                    </h5>
+
+                    
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <?php echo $chamado['categoria']; ?>
+                    </h6>
+                    <p class="card-text">
+                      <?php echo $chamado['descricao']; ?>
+                    </p>
+                    
+                  </div>
+                  <h6 class="card-subtitle mb-2 ">
+                      <?php echo ' <br> Chamado aberto por: '.$chamado['nome']; ?>
+                    </h6>
+                </div>
+              </div>
+              <?php }?>
+              <div class="row mt-5">
+                <div class="col-6">
+                  <a class="btn btn-lg btn-warning btn-block" href="/home">Voltar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="js/bootstrap.min.js"></script>
