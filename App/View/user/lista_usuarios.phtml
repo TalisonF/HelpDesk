@@ -1,7 +1,11 @@
     <div class="row">
+
       <h1 class="p-3 text-primary">
         Lista de Usuarios
       </h1>
+      <?php if(isset($_GET['excluir'])) {?>
+        <h4 class="p-3 m-3 text-danger">Não foi possivel excluir o usuario <?=$_GET['usuario']?>, devido ter chamados abertos. </h4>
+      <?php } ?>
       <table class="table">
         <thead>
           <th>ID</th>

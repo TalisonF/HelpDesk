@@ -17,6 +17,7 @@ class UserController extends Action{
 
     public function cadastrar_user(){        
         $this->validaAutenticacao();
+        $this->userAdm();
         $usuario = Container::getModel('usuario');
 
         $usuario->__set('email' , $_POST['email']);
@@ -35,6 +36,7 @@ class UserController extends Action{
 
     public function lista_usuarios(){      
         $this->validaAutenticacao();
+        $this->userAdm();
 
         $usuarios = Container::getModel('usuario');
 
@@ -46,6 +48,7 @@ class UserController extends Action{
 
     public function alterarPrivilegios(){
         $this->validaAutenticacao();
+        $this->userAdm();
         $usuario = Container::getModel('usuario');
         $usuario->__set('id_usuario', $_GET['id_usuario']);
         $usuario->__set('privilegios', $_POST['Privilegios']);
@@ -57,12 +60,15 @@ class UserController extends Action{
 
     public function excluir_usuario(){
         $this->validaAutenticacao();
+        $this->userAdm();
         $usuario = Container::getModel('usuario');
-        $usuario->__set('id_usuario', $_GET['id_usuario']);
-        $usuario->excluir_usuario();
-
-        header("Location: /lista_usuarios");
-
+        if(\count($usuario->temChamado())> 0){
+            $usuario->__set('id_usuario', $_GET['id_usuario']);
+            $usuario->excluir_usuario();
+            header("Location: /lista_usuarios");
+        }else{
+            header("Location: /lista_usuarios?excluir=temchamado&usuario=".  $_GET['id_usuario']  );
+        }
     }
     
 
@@ -78,6 +84,13 @@ class UserController extends Action{
         }
 	}
 
+    public function userAdm(){
+        session_start();
+        
+		if(!isset($_SESSION['privilegios']) && $_SESSION['privilegios'] == 2 ){
+            header("Location: /?home=notadm");
+        }
+	}
 
 }
 

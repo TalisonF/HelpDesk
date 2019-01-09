@@ -82,7 +82,14 @@ class Usuario extends Model{
         $stmt = $this->db->prepare($query);
         $stmt->bindValue(':id_usuario',$this->__get('id_usuario'));   
         $stmt->execute();     
-       
+    }
+
+    public function temChamado(){
+        $query = "select * from usuarios where id_usuario=:id_usuario";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id_usuario',$this->__get('id_usuario'));   
+        $stmt->execute();        
+        return $stmt->fetchall(\PDO::FETCH_ASSOC);
     }
 }
 
